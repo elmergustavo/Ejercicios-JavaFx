@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.EjemploControlador">
+   <children>
+      <Button fx:id="btnBoton" layoutX="217.0" layoutY="125.0" mnemonicParsing="false" onAction="#Operar" prefHeight="25.0" prefWidth="166.0" text="Operar">
+         <font>
+            <Font name="Bernard MT Condensed" size="16.0" />
+         </font>
+      </Button>
+      <TextField layoutX="193.0" layoutY="32.0" prefHeight="16.0" prefWidth="215.0" fx:id="xtxOp1" />
+      <TextField layoutX="193.0" layoutY="81.0" prefHeight="16.0" prefWidth="215.0" fx:id="xtxOp2" />
+      <TextField editable="false" layoutX="193.0" layoutY="251.0" prefHeight="16.0" prefWidth="215.0" fx:id="xtxResultado" />
+      <Label layoutX="86.0" layoutY="36.0" text="Operador 1" />
+      <Label layoutX="86.0" layoutY="73.0" text="Operador 2" />
+      <Label layoutX="90.0" layoutY="255.0" text="Resultado" />
+      <RadioButton fx:id="rdbSuma" layoutX="193.0" layoutY="174.0" mnemonicParsing="false" text="Sumar" />
+      <RadioButton fx:id="rdbResta" layoutX="302.0" layoutY="174.0" mnemonicParsing="false" text="Restar" />
+      <RadioButton fx:id="rdbMultiplicar" layoutX="193.0" layoutY="211.0" mnemonicParsing="false" text="Multiplicar" />
+      <RadioButton fx:id="rdbDividir" layoutX="301.0" layoutY="211.0" mnemonicParsing="false" text="Dividir" />
+   </children>
+</AnchorPane>
