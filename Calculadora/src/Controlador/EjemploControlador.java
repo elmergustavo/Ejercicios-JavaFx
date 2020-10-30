@@ -17,6 +17,10 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
+import javafx.util.Duration;
+import tray.animations.AnimationType;
+import tray.notification.NotificationType;
+import tray.notification.TrayNotification;
 
 /**
  * FXML Controller class
@@ -52,8 +56,7 @@ public class EjemploControlador implements Initializable {
         this.rdbResta.setToggleGroup(tg);
         this.rdbMultiplicar.setToggleGroup(tg);
         this.rdbDividir.setToggleGroup(tg);
-    
-    
+
     }
 
     @FXML
@@ -66,21 +69,33 @@ public class EjemploControlador implements Initializable {
 
             if (this.rdbSuma.isSelected()) {
                 this.xtxResultado.setText(s.Suma() + "");
+
             } else if (this.rdbResta.isSelected()) {
                 this.xtxResultado.setText(s.Resta() + "");
             } else if (this.rdbMultiplicar.isSelected()) {
                 this.xtxResultado.setText(s.Multiplicar() + "");
             } else if (this.rdbDividir.isSelected()) {
                 if (op2 == 0) {
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setHeaderText(null);
-                    alert.setTitle("Error");
-                    alert.setContentText("Formato Incorrecto");
-                    alert.showAndWait();
+//                    Alert alert = new Alert(Alert.AlertType.ERROR);
+//                    alert.setHeaderText(null);
+//                    alert.setTitle("Error");
+//                    alert.setContentText("Formato Incorrecto");
+//                    alert.showAndWait();
+//                    
+                    String tilte = "Operador Incorrecto";
+                    String message = "Valor invalido";
+                    TrayNotification tray = new TrayNotification();
+                    AnimationType type = AnimationType.SLIDE;
+
+                    tray.setAnimationType(type);
+                    tray.setTitle(tilte);
+                    tray.setMessage(message);
+                    tray.setNotificationType(NotificationType.WARNING);
+                    tray.showAndDismiss(Duration.millis(3000));
                 } else {
                     this.xtxResultado.setText(s.Dividir() + "");
                 }
-                
+
             }
 
         } catch (Exception e) {
